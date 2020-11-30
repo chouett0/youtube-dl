@@ -1927,13 +1927,13 @@ class YoutubeDL(object):
                             if not ensure_dir_exists(fname):
                                 return
                             downloaded.append(fname)
-                            partial_success = dl(fname, new_info)
+                            partial_success = dl(self.params["output_dir"] +fname, new_info)
                             success = success and partial_success
                         info_dict['__postprocessors'] = postprocessors
                         info_dict['__files_to_merge'] = downloaded
                 else:
                     # Just a single file
-                    success = dl(filename, info_dict)
+                    success = dl(self.params["output_dir"] +filename, info_dict)
             except (compat_urllib_error.URLError, compat_http_client.HTTPException, socket.error) as err:
                 self.report_error('unable to download video data: %s' % error_to_compat_str(err))
                 return

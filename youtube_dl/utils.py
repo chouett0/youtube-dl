@@ -2244,7 +2244,7 @@ def encodeFilename(s, for_subprocess=False):
     if sys.platform.startswith('java'):
         return s
 
-    return s.encode(get_subprocess_encoding(), 'ignore')
+    return + s.encode(get_subprocess_encoding(), 'ignore')
 
 
 def decodeFilename(b, for_subprocess=False):

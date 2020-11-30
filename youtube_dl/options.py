@@ -198,6 +198,10 @@ def parseOpts(overrideArguments=None):
         action='store_true', dest='no_color',
         default=False,
         help='Do not emit color codes in output')
+    general.add_option(
+        '--output-dir',
+        dest='output_dir', default='./',
+        help="Output Directory name. Default is Current Dir")
 
     network = optparse.OptionGroup(parser, 'Network Options')
     network.add_option(
